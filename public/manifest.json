@@ -1,0 +1,43 @@
+{
+  "name": "Pop yourself!",
+  "description": "Popups, cookies, and overlays removal",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/icon-16x16.png",
+      "32": "/images/icon-32x32.png",
+      "180": "/images/icon-180x180.png",
+      "192": "/images/icon-192x192.png",
+      "512": "/images/icon-512x512.png"
+    },
+    "default_title": "Pop yourself!"
+  },
+  "icons": {
+    "16": "/images/icon-16x16.png",
+    "32": "/images/icon-32x32.png",
+    "180": "/images/icon-180x180.png",
+    "192": "/images/icon-192x192.png",
+    "512": "/images/icon-512x512.png"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
