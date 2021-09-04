@@ -28,6 +28,7 @@
   "homepage": "https://github.com/unglud/pop-yourself#readme",
   "dependencies": {
     "react": "17.0.2",
+    "react-cookie-consent": "^6.3.0",
     "react-dom": "17.0.2",
     "react-hot-loader": "^4.13.0"
   },

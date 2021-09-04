@@ -18,7 +18,6 @@
     await chrome.action.setBadgeText({ text: "1", tabId: tab.id });
   });
 
-  console.log(`unglued1`);
 })().catch((e) => {
   console.error(e);
 });

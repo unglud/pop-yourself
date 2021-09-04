@@ -13,6 +13,7 @@ specifiers:
   css-loader: ^5.0.0
   file-loader: ^6.1.1
   react: 17.0.2
+  react-cookie-consent: ^6.3.0
   react-dom: 17.0.2
   react-hot-loader: ^4.13.0
   standard-version: ^9.3.1
@@ -26,6 +27,7 @@ specifiers:
 
 dependencies:
   react: 17.0.2
+  react-cookie-consent: 6.3.0_react@17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-hot-loader: 4.13.0_9c6a8df88c2691f81f37725d5b4de033
 
@@ -3717,6 +3719,10 @@ packages:
       supports-color: 8.1.1
     dev: true
 
+  /js-cookie/2.2.1:
+    resolution: { integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ== }
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: { integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ== }
 
@@ -4749,6 +4755,16 @@ packages:
       iconv-lite: 0.4.24
       unpipe: 1.0.0
     dev: true
+
+  /react-cookie-consent/6.3.0_react@17.0.2:
+    resolution: { integrity: sha512-ynDLIJwedf0btR3sHsrRdcng6KWi9lJKLOUxo7BCof0F3DAFPxBRlAgUy4u1UdiPYR0gcjYHGVu5hE+22IWKmg== }
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.0
+    dependencies:
+      js-cookie: 2.2.1
+      prop-types: 15.7.2
+      react: 17.0.2
+    dev: false
 
   /react-dom/17.0.2_react@17.0.2:
     resolution: { integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA== }
