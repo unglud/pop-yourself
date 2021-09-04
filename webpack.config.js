@@ -10,6 +10,7 @@ const config = {
     background: path.join(__dirname, "src/background.ts"),
   },
   output: { path: path.join(__dirname, "dist"), filename: "[name].js" },
+  devtool: "cheap-source-map",
   module: {
     rules: [
       {

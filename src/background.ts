@@ -9,7 +9,8 @@
   chrome.contextMenus.onClicked.addListener(contextMenuAction);
   chrome.contextMenus.create({
     id: "context",
-    title: "Remove this",
+    contexts: ["all"],
+    title: "!Pop it!",
   });
 
   // main
