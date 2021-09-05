@@ -3,18 +3,39 @@ import { useEffect } from "react";
 import CookieConsent from "react-cookie-consent";
 
 export const Cookies = () => {
-  let max = 3;
-  const showDiff = () => {
-    const node = document.body.cloneNode(true);
-    console.log(node);
+  const outlineAddedElement = (node: Node) => {
+    if (node.nodeName === "#text") {
+      return;
+    }
+    const element = node.firstChild?.parentElement;
+    console.log(`New element added:`, element);
+    element!.style.outline = "2px solid red";
+  };
 
-    max--;
-    if (max) {
-      setTimeout(showDiff, 1000);
+  const processMutation = (mutation: MutationRecord) => {
+    console.log(`Mutation detected`, mutation);
+    switch (mutation.type) {
+      case "childList":
+        mutation.addedNodes.forEach(outlineAddedElement);
+        break;
+      case "attributes":
+        break;
     }
   };
 
-  useEffect(showDiff);
+  useEffect(() => {
+    const observer = new MutationObserver((mutationList) => {
+      mutationList.forEach(processMutation);
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeOldValue: true,
+      childList: true,
+      characterData: false,
+      subtree: true,
+    });
+  }, []);
 
   const onAccept = () => console.log(`onAccept`);
   return (
