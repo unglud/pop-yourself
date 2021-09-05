@@ -27,10 +27,13 @@
   },
   "homepage": "https://github.com/unglud/pop-yourself#readme",
   "dependencies": {
+    "node-sass": "^6.0.1",
     "react": "17.0.2",
     "react-cookie-consent": "^6.3.0",
     "react-dom": "17.0.2",
-    "react-hot-loader": "^4.13.0"
+    "react-hot-loader": "^4.13.0",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -49,7 +52,7 @@
     "ts-loader": "^8.0.5",
     "typescript": "^4.0.3",
     "url-loader": "^4.1.1",
-    "webpack": "^5.1.3",
+    "webpack": "^5.51.1",
     "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.11.0"
   },
