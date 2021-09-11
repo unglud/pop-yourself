@@ -60,6 +60,17 @@ export const Cookies = () => {
   };
 
   useEffect(() => {
+    document.addEventListener("click", (e) => {
+      e.composedPath().forEach((element) => {
+        if (element instanceof Element) {
+          if (element.matches(".pop-yourself")) {
+            console.log(`Removing Element`, element);
+            element.remove();
+          }
+        }
+      });
+    });
+
     const observer = new MutationObserver((mutationList) => {
       mutationList.forEach(processMutation);
     });
