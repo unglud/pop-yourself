@@ -1,13 +1,14 @@
 {
     "compilerOptions": {
+        "esModuleInterop": true,
         "outDir": "./dist/",
         "sourceMap": true,
         "strict": true,
         "noImplicitReturns": true,
         "noImplicitAny": true,
-        "module": "es6",
+        "module": "es2020",
         "moduleResolution": "node",
-        "target": "es5",
+        "target": "es2020",
         "allowJs": true,
         "jsx": "react"
     },

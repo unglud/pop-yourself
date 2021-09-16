@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version",
-    "build": "webpack",
-    "start": "webpack --mode=development --watch"
+    "build": "rollup -c",
+    "start": "rollup -c --watch",
+    "useless": "depcheck --ignores=@types/chrome"
   },
   "repository": {
     "type": "git",
@@ -27,34 +28,20 @@
   },
   "homepage": "https://github.com/unglud/pop-yourself#readme",
   "dependencies": {
-    "node-sass": "^6.0.1",
-    "react": "17.0.2",
-    "react-cookie-consent": "^6.3.0",
-    "react-dom": "17.0.2",
-    "react-hot-loader": "^4.13.0",
-    "sass": "^1.39.0",
-    "sass-loader": "^12.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.1",
-    "@hot-loader/react-dom": "17.0.1",
+    "@rollup/plugin-typescript": "^8.2.5",
     "@types/chrome": "0.0.154",
     "@types/react": "17.0.19",
     "@types/react-dom": "17.0.9",
-    "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^6.2.1",
-    "css-loader": "^5.0.0",
-    "file-loader": "^6.1.1",
+    "depcheck": "^1.4.2",
+    "react": "17.0.2",
+    "react-cookie-consent": "^6.3.0",
+    "react-dom": "17.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-sass": "^1.2.8",
     "standard-version": "^9.3.1",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^8.0.5",
-    "typescript": "^4.0.3",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.0.0",
-    "webpack-dev-server": "^3.11.0"
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
   },
   "standard-version": {
     "packageFiles": [
