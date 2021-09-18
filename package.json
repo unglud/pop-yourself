@@ -1,6 +1,6 @@
 {
   "name": "pop-yourself",
-  "version": null,
+  "version": "0.0.2",
   "description": "Popups, cookies, and overlays removal Chrome Extension",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,6 @@
     "@types/react": "17.0.19",
     "@types/react-dom": "17.0.9",
     "depcheck": "^1.4.2",
-    "minor": "^1.2.3",
     "react": "17.0.2",
     "react-cookie-consent": "^6.3.0",
     "react-dom": "17.0.2",
