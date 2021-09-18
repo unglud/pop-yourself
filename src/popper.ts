@@ -25,12 +25,19 @@ export const monitorPops = () => {
   });
 };
 
-const excludedElements = [".pop-yourself"];
+const excludedElements = ["script", "style", ".pop-yourself"];
+const attributes = ["href"];
 
 const getElement = (node: Node) => node.firstChild?.parentElement;
 
-const excluded = (element: HTMLElement) =>
-  excludedElements.some((selectorString) => element.matches(selectorString));
+const excluded = (element: HTMLElement | string) => {
+  if (typeof element === "string") {
+    return attributes.some((attribute) => attribute === element);
+  }
+  return excludedElements.some((selectorString) =>
+    element.matches(selectorString)
+  );
+};
 
 const outlineAddedElement = (node: Node) => {
   if (node.nodeName === "#text") {
@@ -38,18 +45,23 @@ const outlineAddedElement = (node: Node) => {
   }
   const element = getElement(node);
 
+  if (!element) {
+    return;
+  }
+
   if (element && excluded(element)) {
-    console.log(`Element is excluded`, excludedElements, element);
+    //console.log(`Element is excluded`, excludedElements, element);
     return;
   }
 
   console.log(`New element added:`, element);
   element!.className += " pop-yourself pop-yourself-outline";
+  //element.remove();
 };
 
 const showAttributes = (mutation: MutationRecord) => {
   const element = getElement(mutation.target);
-  if (element && excluded(element)) {
+  if (!element || (element && excluded(element))) {
     //console.log(`Element is excluded`, excludedElements, element);
     return;
   }
@@ -57,15 +69,23 @@ const showAttributes = (mutation: MutationRecord) => {
   changeBox.className = "pop-yourself pop-yourself-attributes";
   let attribute =
     mutation.attributeName === "class" ? "className" : mutation.attributeName;
-  if (!attribute) {
+  if (!attribute || excluded(attribute)) {
     return;
   }
 
   const previousValue = mutation.oldValue;
+  if (!previousValue) {
+    // if attribute have no value, eg custom attributes
+    return;
+  }
+
   // @ts-ignore
   const currentValue = element[attribute];
   changeBox.innerHTML = `<p>${attribute}: ${previousValue}</p><p>${attribute}: ${currentValue}</p>`;
   element!.appendChild(changeBox);
+  console.log(
+    `Attribute ${attribute} changed from "${previousValue}" => "${currentValue}"`
+  );
 };
 
 const processMutation = (mutation: MutationRecord) => {

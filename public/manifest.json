@@ -36,21 +36,11 @@
         "<all_urls>"
       ],
       "js": [
-        "content.js"
+        "content.js",
+        "src/content.ts",
+        "src/popper.ts"
       ],
-      "run_at": "document_end"
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "popper.js",
-        "popper.css",
-        "content.js.map"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
+      "run_at": "document_idle"
     }
   ],
   "commands": {

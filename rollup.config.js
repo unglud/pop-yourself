@@ -1,6 +1,6 @@
-import typescript from "@rollup/plugin-typescript";
-import sass from "rollup-plugin-sass";
-import copy from "rollup-plugin-copy";
+import typescript from '@rollup/plugin-typescript';
+import sass from 'rollup-plugin-sass';
+import copy from 'rollup-plugin-copy';
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -21,6 +21,8 @@ const config = {
         { src: "public/options.html", dest: "dist" },
         { src: "public/popup.html", dest: "dist" },
         { src: "public/icon*", dest: "dist" },
+        { src: "src/popper.ts", dest: "dist/src" },
+        { src: "src/content.ts", dest: "dist/src" },
       ],
     }),
     sass({ insert: true }),
