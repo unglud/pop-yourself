@@ -46,7 +46,7 @@
   "standard-version": {
     "packageFiles": [
       {
-        "filename": "manifest.json",
+        "filename": "public/manifest.json",
         "type": "json"
       },
       {
