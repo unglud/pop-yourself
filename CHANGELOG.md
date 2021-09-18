@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [](https://github.com/unglud/pop-yourself/compare/v0.0.2...v) (2021-09-18)
+
+
+### Bug Fixes
+
+* update manifest version as well ([f78ecd6](https://github.com/unglud/pop-yourself/commit/f78ecd6bc636185a7c74ca4a2371c5b77378ae91))
+
 ### [0.0.2](https://github.com/unglud/pop-yourself/compare/v0.0.1...v0.0.2) (2021-09-18)
 
 
